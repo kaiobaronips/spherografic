@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 96%;
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+    --primary: 235 100% 62%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 0 0% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 235 100% 62%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 235 100% 62%;
+    --radius: 0.5rem;
+    
+    /* PRISMA Custom Properties */
+    --prisma-black: #000000;
+    --prisma-graphite: #121212;
+    --prisma-white: #F5F5F5;
+    --prisma-blue: #3C4FFF;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-prisma-black text-prisma-white antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+    cursor: none;
+  }
+  
+  ::selection {
+    background: rgba(60, 79, 255, 0.3);
+    color: #F5F5F5;
+  }
+}
+
+@layer components {
+  /* Typography */
+  .text-display {
+    @apply text-5xl md:text-6xl lg:text-7xl font-light tracking-tight;
+    letter-spacing: -0.03em;
+  }
+  
+  .text-headline {
+    @apply text-3xl md:text-4xl lg:text-5xl font-light;
+    letter-spacing: -0.02em;
+  }
+  
+  .text-title {
+    @apply text-xl md:text-2xl font-medium;
+    letter-spacing: -0.01em;
+  }
+  
+  .text-body {
+    @apply text-base font-normal leading-relaxed;
+    line-height: 1.7;
+  }
+  
+  .text-caption {
+    @apply text-sm font-mono uppercase tracking-widest;
+    letter-spacing: 0.15em;
+  }
+  
+  .text-label {
+    @apply text-xs font-mono uppercase tracking-wider;
+    letter-spacing: 0.1em;
+  }
+  
+  /* Interactive Elements */
+  .btn-primary {
+    @apply relative px-8 py-4 bg-transparent border border-prisma-white/20 text-prisma-white text-sm font-mono uppercase tracking-wider transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply border-prisma-blue bg-prisma-blue/10;
+    box-shadow: 0 0 30px rgba(60, 79, 255, 0.2);
+  }
+  
+  .btn-primary::before {
+    content: '';
+    @apply absolute inset-0 bg-prisma-blue/5 scale-x-0 origin-left transition-transform duration-300;
+  }
+  
+  .btn-primary:hover::before {
+    @apply scale-x-100;
+  }
+  
+  /* Card Styles */
+  .card-prisma {
+    @apply relative bg-prisma-graphite/50 border border-prisma-white/10 p-8 transition-all duration-500;
+  }
+  
+  .card-prisma:hover {
+    @apply border-prisma-blue/30;
+    box-shadow: 0 0 40px rgba(60, 79, 255, 0.1);
+  }
+  
+  /* Form Styles */
+  .input-prisma {
+    @apply w-full bg-transparent border-b border-prisma-white/20 py-4 text-prisma-white placeholder:text-prisma-white/40 focus:outline-none focus:border-prisma-blue transition-colors duration-300;
+  }
+  
+  /* Link Styles */
+  .link-prisma {
+    @apply relative text-prisma-white/60 hover:text-prisma-white transition-colors duration-300;
+  }
+  
+  .link-prisma::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-px bg-prisma-blue transition-all duration-300;
+  }
+  
+  .link-prisma:hover::after {
+    @apply w-full;
+  }
+  
+  /* Grid Pattern */
+  .grid-pattern {
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  
+  /* Noise Texture */
+  .noise-overlay {
+    @apply pointer-events-none fixed inset-0 z-50 opacity-[0.015];
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+  
+  /* Scrollbar */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--prisma-black);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--prisma-graphite);
+    border-radius: 2px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--prisma-blue);
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+  
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #F5F5F5 0%, #3C4FFF 100%);
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-prisma-graphite/80 backdrop-blur-xl;
+  }
+  
+  /* Hide cursor on interactive elements for custom cursor */
+  a, button, input, textarea, select, [role="button"] {
+    cursor: none;
+  }
+}
