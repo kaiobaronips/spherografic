@@ -112,7 +112,7 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
       {/* Bottom decorative elements */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-4">
         <div className="w-12 h-px bg-gradient-to-r from-transparent to-prisma-white/20" />
-        <span className="text-label text-prisma-white/30 tracking-[0.2em]">SPHEROGRAPHIC</span>
+        <span className="text-label text-prisma-white/30 tracking-[0.2em]">SPHEROGRAPHIC™</span>
         <div className="w-12 h-px bg-gradient-to-l from-transparent to-prisma-white/20" />
       </div>
     </div>

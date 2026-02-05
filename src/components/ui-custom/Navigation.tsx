@@ -41,7 +41,7 @@ export function Navigation() {
             <Link to="/" className="flex items-center gap-4 group">
               <PrismaLogo size={40} animated={false} />
               <span className="text-label text-prisma-white/80 group-hover:text-prisma-white transition-colors tracking-[0.2em]">
-                SPHEROGRAPHIC
+                SPHEROGRAPHIC™
               </span>
             </Link>
 

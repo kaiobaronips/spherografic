@@ -187,7 +187,7 @@ export function Home() {
           {/* Main Title */}
           <div className="overflow-hidden mb-8">
             <h1 className="hero-title-line text-[12vw] md:text-[10vw] lg:text-[8vw] font-bold text-prisma-white tracking-tight leading-none">
-              SPHEROGRAPHIC
+              SPHEROGRAPHIC™
             </h1>
           </div>
 

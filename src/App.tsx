@@ -101,7 +101,7 @@ function AppContent() {
             <div className="grid md:grid-cols-4 gap-12 mb-16">
               {/* Brand */}
               <div className="md:col-span-2">
-                <span className="text-2xl font-bold text-prisma-white tracking-tight">SPHEROGRAPHIC</span>
+                <span className="text-2xl font-bold text-prisma-white tracking-tight">SPHEROGRAPHIC™</span>
                 <p className="text-prisma-white/50 mt-4 max-w-md leading-relaxed">
                   Visual systems engineering studio especializado em criar experiências digitais 
                   com precisão geométrica e autoridade silenciosa.
@@ -151,7 +151,7 @@ function AppContent() {
             {/* Bottom Bar */}
             <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-prisma-white/10">
               <p className="text-sm text-prisma-white/40">
-                © 2024 SPHEROGRAPHIC Studio. All rights reserved.
+                © 2024 SPHEROGRAPHIC™ Studio. All rights reserved.
               </p>
               <div className="flex items-center gap-6 mt-4 md:mt-0">
                 <a href="#" className="text-sm text-prisma-white/40 hover:text-prisma-white transition-colors">
