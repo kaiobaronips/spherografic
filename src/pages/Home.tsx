@@ -186,15 +186,15 @@ export function Home() {
         >
           {/* Main Title */}
           <div className="overflow-hidden mb-8">
-            <h1 className="hero-title-line text-[clamp(32px,12vw,120px)] md:text-[10vw] lg:text-[8vw] font-bold text-prisma-white tracking-tight leading-none">
+            <h1 className="hero-title-line text-[clamp(28px,9.5vw,120px)] md:text-[10vw] lg:text-[8vw] font-bold text-prisma-white tracking-tight leading-none">
               SPHEROGRAPHIC™
             </h1>
           </div>
 
           {/* Subtitle */}
           <div className="hero-subtitle">
-            <p className="text-[clamp(10px,2.8vw,14px)] text-prisma-blue tracking-[0.2em] sm:tracking-[0.3em] uppercase leading-snug max-w-[22rem] sm:max-w-none mx-auto">
-              VISUAL STUDIO / ENGINEERING <span className="block sm:inline">SYSTEMS</span>
+            <p className="text-[clamp(9px,2.2vw,13px)] text-prisma-blue tracking-[0.12em] sm:tracking-[0.22em] uppercase leading-none whitespace-nowrap mx-auto">
+              VISUAL STUDIO / ENGINEERING SYSTEMS
             </p>
           </div>
         </div>

@@ -147,11 +147,10 @@ export function Navigation() {
         >
           <Link
             to="/contact"
-            className="group relative inline-flex items-center justify-center px-8 py-3 border border-prisma-blue/60 text-prisma-white text-[12px] font-mono uppercase tracking-[0.3em] hover:border-prisma-blue hover:text-prisma-white transition-colors duration-300"
+            className="group relative inline-flex items-center justify-center border border-prisma-blue/90 bg-prisma-blue px-10 py-4 text-[12px] uppercase tracking-[0.25em] text-prisma-black transition-colors duration-300 hover:bg-prisma-blue/90"
           >
             START PROJECT
-            <span className="absolute -right-3 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-prisma-blue rounded-full" />
-            <span className="absolute -right-3 top-1/2 -translate-y-1/2 w-10 h-10 border border-prisma-blue/60 rounded-full" />
+            <span className="ml-4 text-[14px] leading-none">→</span>
           </Link>
         </div>
       </div>
