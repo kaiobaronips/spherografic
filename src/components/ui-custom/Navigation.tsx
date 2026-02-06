@@ -53,8 +53,13 @@ const ActiveIndicator: React.FC = () => (
 );
 
 export function Navigation(): React.ReactElement {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mobileMenuState, setMobileMenuState] = useState({
+    open: false,
+    pathname: '',
+  });
   const location = useLocation();
+  const isMobileMenuOpen =
+    mobileMenuState.open && mobileMenuState.pathname === location.pathname;
   const isScrolled = useScrollThreshold(50);
   
   // Refs para animações GSAP
@@ -66,35 +71,18 @@ export function Navigation(): React.ReactElement {
   // Bloquear scroll quando menu mobile está aberto
   useLockBodyScroll(isMobileMenuOpen);
 
-  // Fechar menu ao mudar de rota usando ref para evitar setState síncrono
-  const prevPathnameRef = useRef(location.pathname);
-  
-  useEffect(() => {
-    if (location.pathname !== prevPathnameRef.current) {
-      // Sempre atualizar o ref quando o pathname muda
-      prevPathnameRef.current = location.pathname;
-      
-      // Fechar menu se estiver aberto
-      if (isMobileMenuOpen) {
-        requestAnimationFrame(() => {
-          setIsMobileMenuOpen(false);
-        });
-      }
-    }
-  }, [location.pathname, isMobileMenuOpen]);
-
   // Fechar menu com ESC
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && isMobileMenuOpen) {
-        setIsMobileMenuOpen(false);
+        setMobileMenuState({ open: false, pathname: location.pathname });
         menuButtonRef.current?.focus();
       }
     };
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [isMobileMenuOpen]);
+  }, [isMobileMenuOpen, location.pathname]);
 
   // Foco trap no menu mobile
   useEffect(() => {
@@ -122,10 +110,13 @@ export function Navigation(): React.ReactElement {
     };
 
     // Focar no primeiro link quando abrir
-    setTimeout(() => firstElement?.focus(), 100);
+    const focusTimeout = window.setTimeout(() => firstElement?.focus(), 100);
 
     menu.addEventListener('keydown', handleTabKey);
-    return () => menu.removeEventListener('keydown', handleTabKey);
+    return () => {
+      window.clearTimeout(focusTimeout);
+      menu.removeEventListener('keydown', handleTabKey);
+    };
   }, [isMobileMenuOpen]);
 
   // Animações GSAP do menu mobile
@@ -166,12 +157,20 @@ export function Navigation(): React.ReactElement {
   }, [isMobileMenuOpen]);
 
   const toggleMobileMenu = useCallback(() => {
-    setIsMobileMenuOpen(prev => !prev);
-  }, []);
+    setMobileMenuState(prev => {
+      const isOpenOnCurrentPath =
+        prev.open && prev.pathname === location.pathname;
+
+      return {
+        open: !isOpenOnCurrentPath,
+        pathname: location.pathname,
+      };
+    });
+  }, [location.pathname]);
 
   const handleMobileLinkClick = useCallback(() => {
-    setIsMobileMenuOpen(false);
-  }, []);
+    setMobileMenuState({ open: false, pathname: location.pathname });
+  }, [location.pathname]);
 
   const navLinkClasses = useCallback((path: string) => {
     const isActive = location.pathname === path;
