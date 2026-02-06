@@ -193,7 +193,7 @@ export function Home() {
 
           {/* Subtitle */}
           <div className="hero-subtitle">
-            <p className="text-[clamp(9px,2.2vw,13px)] text-prisma-blue tracking-[0.12em] sm:tracking-[0.22em] uppercase leading-none whitespace-nowrap mx-auto">
+            <p className="text-[clamp(9px,2.2vw,13px)] font-mono uppercase text-prisma-blue tracking-[0.12em] sm:tracking-[0.22em] leading-none whitespace-nowrap mx-auto">
               VISUAL STUDIO / ENGINEERING SYSTEMS
             </p>
           </div>

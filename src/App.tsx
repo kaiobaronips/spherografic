@@ -40,18 +40,26 @@ function AppContent() {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
 
+  // Handle reduced motion preference
   useEffect(() => {
-    // Initialize ScrollTrigger
-    ScrollTrigger.refresh();
-
     // Check for reduced motion preference
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     if (prefersReducedMotion) {
-      setIsLoading(false);
-      setShowContent(true);
+      // Use requestAnimationFrame to avoid synchronous setState
+      requestAnimationFrame(() => {
+        setIsLoading(false);
+        setShowContent(true);
+      });
     }
   }, []);
+
+  // Initialize ScrollTrigger after loading
+  useEffect(() => {
+    if (!isLoading) {
+      ScrollTrigger.refresh();
+    }
+  }, [isLoading]);
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
@@ -102,7 +110,7 @@ function AppContent() {
               {/* Brand */}
               <div className="md:col-span-2">
                 <span className="text-2xl font-bold text-prisma-white tracking-tight">SPHEROGRAPHIC™</span>
-                <span className="mt-3 block text-[11px] uppercase tracking-[0.55em] text-prisma-blue/90">
+                <span className="mt-3 block text-[11px] font-mono uppercase tracking-[0.55em] text-prisma-blue/90">
                   VISUAL STUDIO / ENGINEERING SYSTEMS
                 </span>
                 <p className="text-prisma-white/50 mt-4 max-w-md leading-relaxed">
