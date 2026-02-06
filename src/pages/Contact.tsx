@@ -326,10 +326,10 @@ export function Contact() {
                 <span className="text-label text-prisma-white/40">Email</span>
               </div>
               <a 
-                href="mailto:hello@spherographic.studio"
+                href="mailto:Studio@spherografic.com.br"
                 className="text-prisma-white hover:text-prisma-blue transition-colors duration-300"
               >
-                hello@spherographic.studio
+                Studio@spherografic.com.br
               </a>
             </div>
 

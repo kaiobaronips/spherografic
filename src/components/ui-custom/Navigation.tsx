@@ -38,9 +38,13 @@ export function Navigation() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link to="/" className="flex items-center gap-4 group">
-              <PrismaLogo size={40} animated={false} />
-              <span className="text-label text-prisma-white/80 group-hover:text-prisma-white transition-colors tracking-[0.2em]">
+            <Link to="/" className="flex items-center gap-3 sm:gap-4 group">
+              <PrismaLogo
+                size={32}
+                animated={false}
+                className="origin-left sm:scale-[1.1] md:scale-[1.25]"
+              />
+              <span className="text-[10px] sm:text-[11px] md:text-label text-prisma-white/80 group-hover:text-prisma-white transition-colors tracking-[0.18em] sm:tracking-[0.2em] leading-tight max-w-[10rem] sm:max-w-none whitespace-normal">
                 SPHEROGRAPHIC™
               </span>
             </Link>
@@ -132,6 +136,23 @@ export function Navigation() {
               {item.label}
             </Link>
           ))}
+        </div>
+
+        {/* Mobile CTA */}
+        <div
+          className={`absolute bottom-10 left-1/2 -translate-x-1/2 transition-all duration-500 ${
+            isMobileMenuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+          }`}
+          style={{ transitionDelay: isMobileMenuOpen ? '350ms' : '0ms' }}
+        >
+          <Link
+            to="/contact"
+            className="group relative inline-flex items-center justify-center px-8 py-3 border border-prisma-blue/60 text-prisma-white text-[12px] font-mono uppercase tracking-[0.3em] hover:border-prisma-blue hover:text-prisma-white transition-colors duration-300"
+          >
+            START PROJECT
+            <span className="absolute -right-3 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-prisma-blue rounded-full" />
+            <span className="absolute -right-3 top-1/2 -translate-y-1/2 w-10 h-10 border border-prisma-blue/60 rounded-full" />
+          </Link>
         </div>
       </div>
     </>

@@ -102,6 +102,9 @@ function AppContent() {
               {/* Brand */}
               <div className="md:col-span-2">
                 <span className="text-2xl font-bold text-prisma-white tracking-tight">SPHEROGRAPHIC™</span>
+                <span className="mt-3 block text-[11px] uppercase tracking-[0.55em] text-prisma-blue/90">
+                  VISUAL STUDIO / ENGINEERING SYSTEMS
+                </span>
                 <p className="text-prisma-white/50 mt-4 max-w-md leading-relaxed">
                   Visual systems engineering studio especializado em criar experiências digitais 
                   com precisão geométrica e autoridade silenciosa.
