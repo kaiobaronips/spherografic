@@ -235,11 +235,12 @@ export function Navigation(): React.ReactElement {
 
             {/* Mobile Menu Button */}
             <button
+              type="button"
               ref={menuButtonRef}
               onClick={toggleMobileMenu}
               className="md:hidden relative w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-prisma-blue/50 rounded"
               aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={isMobileMenuOpen}
+              aria-haspopup="dialog"
               aria-controls="mobile-menu"
             >
               <div className="relative w-6 h-4">
@@ -276,7 +277,7 @@ export function Navigation(): React.ReactElement {
             ? 'pointer-events-auto'
             : 'pointer-events-none opacity-0'
         }`}
-        aria-hidden={!isMobileMenuOpen}
+        hidden={!isMobileMenuOpen}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation"
