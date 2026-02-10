@@ -309,7 +309,7 @@ export function Navigation(): React.ReactElement {
           <Link
             to="/contact"
             onClick={handleMobileLinkClick}
-            className="relative inline-flex items-center justify-center border border-prisma-blue bg-transparent px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] text-prisma-white/80 transition-colors duration-300 hover:bg-prisma-blue/10 hover:text-prisma-white focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue focus-visible:ring-offset-2 focus-visible:ring-offset-prisma-black w-full max-w-[280px]"
+            className="relative inline-flex items-center justify-center whitespace-nowrap border border-prisma-blue bg-transparent px-12 py-6 text-lg font-mono uppercase tracking-[0.16em] text-prisma-white/80 transition-colors duration-300 hover:bg-prisma-blue/10 hover:text-prisma-white focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue focus-visible:ring-offset-2 focus-visible:ring-offset-prisma-black w-full max-w-[280px]"
           >
             START PROJECT
           </Link>
