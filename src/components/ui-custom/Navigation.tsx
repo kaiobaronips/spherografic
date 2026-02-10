@@ -177,7 +177,7 @@ export function Navigation(): React.ReactElement {
     return `relative px-5 py-2 text-sm font-mono uppercase tracking-wider transition-colors duration-300 ${
       isActive
         ? 'text-prisma-white'
-        : 'text-prisma-white/50 hover:text-prisma-white focus:text-prisma-white focus:outline-none focus:ring-2 focus:ring-prisma-blue/50 rounded'
+        : 'text-prisma-white/50 hover:text-prisma-white focus:text-prisma-white focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue/50 rounded'
     }`;
   }, [location.pathname]);
 
@@ -225,12 +225,12 @@ export function Navigation(): React.ReactElement {
 
             {/* CTA Button */}
             <div className="hidden md:block">
-              <Link
-                to="/contact"
-                className="px-6 py-2.5 border border-prisma-white/20 text-sm font-mono uppercase tracking-wider text-prisma-white/80 hover:text-prisma-white hover:border-prisma-blue hover:bg-prisma-blue/5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-prisma-blue/50"
-              >
-                Start Project
-              </Link>
+            <Link
+              to="/contact"
+              className="px-7 py-2.5 border border-prisma-blue text-sm font-mono uppercase tracking-[0.18em] text-prisma-white/75 hover:text-prisma-white hover:bg-prisma-blue/10 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue/50"
+            >
+              Start Project
+            </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -289,7 +289,7 @@ export function Navigation(): React.ReactElement {
               ref={el => { mobileLinksRef.current[index] = el; }}
               to={item.path}
               onClick={handleMobileLinkClick}
-              className={`text-3xl font-light tracking-tight transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-prisma-blue/50 rounded px-4 py-2 ${
+              className={`text-3xl font-light tracking-tight transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue/50 rounded px-4 py-2 ${
                 location.pathname === item.path
                   ? 'text-prisma-white'
                   : 'text-prisma-white/50 hover:text-prisma-white'
@@ -309,7 +309,7 @@ export function Navigation(): React.ReactElement {
           <Link
             to="/contact"
             onClick={handleMobileLinkClick}
-            className="relative inline-flex items-center justify-center border border-prisma-blue/90 bg-prisma-blue px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] text-prisma-black transition-colors duration-300 hover:bg-prisma-blue/90 focus:outline-none focus:ring-2 focus:ring-prisma-blue focus:ring-offset-2 focus:ring-offset-prisma-black w-full max-w-[280px]"
+            className="relative inline-flex items-center justify-center border border-prisma-blue bg-transparent px-12 py-5 text-sm font-mono uppercase tracking-[0.2em] text-prisma-white/80 transition-colors duration-300 hover:bg-prisma-blue/10 hover:text-prisma-white focus:outline-none focus-visible:ring-2 focus-visible:ring-prisma-blue focus-visible:ring-offset-2 focus-visible:ring-offset-prisma-black w-full max-w-[280px]"
           >
             START PROJECT
           </Link>
