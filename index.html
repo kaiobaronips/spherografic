@@ -4,8 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SPHEROGRAFIC ™ l Visual Studio & Engineering Systems</title>
-    <link rel="icon" type="image/png" sizes="any" href="/favicon.png" />
-    <link rel="icon" href="/favicon.ico" />
+    <script>
+      (() => {
+        const favicon = document.createElement('link');
+        favicon.rel = 'icon';
+        favicon.type = 'image/jpeg';
+        favicon.href = '/favicon.jpg';
+        document.head.appendChild(favicon);
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>
